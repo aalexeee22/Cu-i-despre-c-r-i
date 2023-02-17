@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="style.css" rel="stylesheet"><!--am importat documentul css-->
+  <script src="javascript.js" async></script><!--am importat documentul JavaScript-->
+  <title>Cu si despre carti</title><!--titlul propriu-zis al paginii web-->
+</head>
+<body>
+  <h1 class="page-title">Cu si despre carti</h1><!--titlul paginii web-->
+  <div class="overlay-text visible">
+    Click ca sa incepi
+  </div>
+  <div id="game-over-text" class="overlay-text">
+    GAME OVER
+    <span class="overlay-text-small">Incearca din nou</span>
+  </div>
+  <div id="victory-text" class="overlay-text">
+    VICTORIE
+    <span class="overlay-text-small">Incerca din nou</span>
+  </div>
+
+  <div class="game-container">
+    <div class="game-info-container">
+      <div class="game-info">
+        Timp <span id="time-remaining">100</span>
+      </div>
+      <div class="game-info">
+        Miscari <span id="flips">0</span>
+      </div>
+    </div>
+    <!--fiecare div cu clasa card contine atributele unei cărți: partea din spate, cea din față și detaliile celor două părți-->
+    <div class="card">
+      <div class="card-back card-face">
+       <img class="sweets" src="Imagini/bomboana.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Imagini/bufnita.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="sweets" src="Imagini/bomboana.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Imagini/bufnita.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="sweets" src="Imagini/bomboana.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Imagini/avion.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="sweets" src="Imagini/bomboana.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Imagini/avion.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="sweets" src="Imagini/bomboana.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Imagini/cheie.png">
+      </div>
+    </div>
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="sweets" src="Imagini/bomboana.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value" src="Imagini/cheie.png">
+        </div>
+      </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="sweets" src="Imagini/bomboana.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Imagini/veverita.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="sweets" src="Imagini/bomboana.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Imagini/veverita.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="sweets" src="Imagini/bomboana.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Imagini/pisica.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="sweets" src="Imagini/bomboana.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Imagini/pisica.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="sweets" src="Imagini/bomboana.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Imagini/inima.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="sweets" src="Imagini/bomboana.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Imagini/inima.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="sweets" src="Imagini/bomboana.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Imagini/scorpion.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="sweets" src="Imagini/bomboana.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Imagini/scorpion.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="sweets" src="Imagini/bomboana.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Imagini/cal.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="sweets" src="Imagini/bomboana.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Imagini/cal.png">
+      </div>
+    </div>
+  </div>
+<p id="rights">© Pana Alexandra</p>
+</body>
+</html>

@@ -1,0 +1,189 @@
+@font-face {
+    font-family: "SuperFun";
+    src: url("Fonturi/FBSuperFun.woff") format("woff"),
+         url("Fonturi/FBSuperFun.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "SM";
+    src: url("Fonturi/Sunday Morning.woff") format("woff"),
+         url("Fonturi/Sunday Morning.woff2") format("woff2");
+}
+/*am importat stilurile de scris pentru titluri, timp și mișcări*/
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100vh;/*fundalul colorat în gradient mai jos va fi văzut în întregime pe ecran*/
+  font-family: SuperFun;
+}
+
+body {
+  margin: 0;/*fără margini*/
+  background: radial-gradient(rgb(163, 45, 81),rgb(204, 111, 139));
+    /*fundalul este colorat în gradient de la prima culoare la a doua*/
+}
+
+.page-title {
+  color:beige;
+  font-family: SM, serif;/*primul font este unul din cele importate mai sus, iar al doilea este pus în caz că primul nu se încarcă*/
+  font-weight: normal;
+  text-align: center;
+  font-size: 6em;/*mărimea titlului*/
+}
+
+.game-info-container {
+  /*aliniază conținutul astfel încât primul rând să conțină parametrii jocului*/
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.game-info {
+  color: #FFBB89;
+  font-size: 4em;
+}
+
+.game-container {
+  margin: 50px auto;
+  display: grid;/*se aseaza cartile in coloane*/
+  grid-template-columns: repeat(4, auto);/*in fiecare coloana sunt cate 4 carti*/
+  grid-gap: 10px;/*spatiul dintre cartile de joc*/
+  justify-content: center;
+  perspective: 500px;
+}
+
+.card {
+  position: relative;
+  height: 175px;
+  width: 125px;
+  
+}
+
+.card-face {
+  position: absolute;
+  display: flex;
+  justify-content: center;/*alinierea conținutului în centrul cărții de joc*/
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  border-width: 1px;
+  border-style: solid;
+  overflow: hidden;/*tot ce iese în exteriorul cărții de joc nu se vede*/
+  transition: transform 500ms ease-in-out;/*tranziția pe care o face bomboana de pe cartea de joc*/
+  backface-visibility: hidden;
+}
+
+.card.visible .card-back {
+  transform: rotateY(-180deg); /*rotește cartea de joc*/
+}
+
+.card.visible .card-front {
+  transform: rotateY(0); 
+}
+
+.card.matched .card-front .card-value {
+  animation: dance 1s linear infinite 500ms;/*animație când este găsită o pereche de cărți*/
+}
+
+.card-back {
+  background-color:lightskyblue;
+  border-color: #FF6D00;
+  transform: rotateY(0); 
+}
+
+.sweets {
+  align-self: flex-center;
+  transition: transform 100ms ease-in-out;
+  transform: translateY(-10px);
+}
+
+.card-back:hover .sweets {
+  transform: translateY(0);
+}
+
+.card-value {
+  position: relative;
+  transition: transform 100ms ease-in-out;
+  transform: scale(.9);
+  width:100px;
+}
+
+.card-front:hover .card-value {
+  transform: scale(1);
+}
+
+.card-front {
+  background-color: #FFBB89;
+  border-color: #333;
+  transform: rotateY(180deg);
+}
+
+.overlay-text {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  display: none;/*textul va apărea doar la începutul/sfârșitul jocului*/
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color:beige;
+  font-family: SM, serif;
+  transition: background-color 500ms, font-size 500ms;
+}
+
+.overlay-text-small {
+  font-size: .3em;
+}
+
+.overlay-text.visible {
+  display: flex;
+  animation: overlay-grow 500ms forwards;
+}
+
+@keyframes dance {
+  /*modul în care se mișcă desenele din interiorul cărților de joc în cazul în care se găsește o pereche*/
+  0%, 100% {
+    transform: rotate(0)
+  }
+  25% {
+    transform: rotate(-30deg)
+  }
+  75% {
+    transform: rotate(30deg)
+  }
+}
+
+@keyframes overlay-grow /*animația care introduce textul de început/încheiere al jocului*/
+{
+  from {
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 0;
+  }
+  to {
+    background-color: rgba(0, 0, 0, .8);
+    font-size: 10em;
+  }
+}
+
+@media (max-width: 600px) 
+/*încadrează jocul în pagina web pentru a putea fi vizionat și pe ecrane mai mici(ex.:cele ale telefoanelor)*/
+{
+  .game-container {
+    grid-template-columns: repeat(2, auto)
+  }
+
+  .game-info-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+#rights{
+  font-size:2em;
+  text-align:center;
+}
